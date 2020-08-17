@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="content-section">
+       {% for product in results %}
+        <div>id:{{product.id}} name:{{product.name}} image:{{product.image}} price:{{product.price}}</div>
+       {% endfor %}
+    </div>
+    
+
+{% endblock content %}

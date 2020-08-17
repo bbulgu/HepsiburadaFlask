@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mdb-4">Hepsiburada Link Girişi</legend>
+                <div class="form-group">
+                    {{ form.product_link.label(class="form-control-label") }}
+                    {% if form.product_link.errors %}
+                        {{ form.product_link(class="form-control form-control-lg is-invalid") }}
+                        <div>
+                            {% for error in form.product_link.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+
+                    {% else %}
+                        {{ form.product_link(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div> 
+                </fieldset>
+                
+        </form>
+    </div>
+    
+
+{% endblock content %}
