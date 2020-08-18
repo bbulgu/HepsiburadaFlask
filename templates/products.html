@@ -1,11 +1,37 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <div class="content-section">
-       {% for product in results %}
-        <div>id:{{product.id}} name:{{product.name}} image:{{product.image}} price:{{product.price}}</div>
-       {% endfor %}
-    </div>
+<div class="content-section">
+    <table id="dtBasicExample" class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th class="th-sm">ID</th>
+                <th class="th-sm">Title</th>
+                <th class="th-sm">Price</th>
+                <th class="th-sm">Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in results %}
+            <tr>
+                <th>{{product.id}}</th>
+                <th>{{product.title}}</th>
+                <th>{{product.image}}</th>
+                <th>{{product.price}}</th>
+            </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Image</th>
+            </tr>
+        </tfoot>
+    </table>
     
+</div>
+
 
 {% endblock content %}

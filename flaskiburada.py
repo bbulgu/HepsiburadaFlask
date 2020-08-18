@@ -4,13 +4,16 @@ from forms import ProductForm
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from bs4 import BeautifulSoup
-
+import configparser
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '6d65c8f1540d2885e69dfe8eb06f319c'
+config = configparser.ConfigParser()
+config.read('passwords.config') # where i keep my credentials
+
+app.config['SECRET_KEY'] = config['APP']['SECRET_KEY'] 
 
 #db 
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:dontyoudb@localhost:5432/hepsiflask"
+app.config['SQLALCHEMY_DATABASE_URI'] = config['APP']['SQLALCHEMY_DATABASE_URI'] 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
