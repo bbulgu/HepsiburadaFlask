@@ -1,6 +1,23 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <h1>{{ product }}</h1>
+<table id="Products" class="table">
+    <thead class="thead-light">
+        <tr>
+            <th class="th-sm">ID</th>
+            <th class="th-sm">Title</th>
+            <th class="th-sm">Price</th>
+            <th class="th-sm">Image</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>{{product.id}}</th>
+            <th>{{product.title}}</th>
+            <th>{{product.image}}</th>
+            <th>{{product.price}}</th>
+        </tr>
+    </tbody>
+</table>
 
 {% endblock content %}
