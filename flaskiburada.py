@@ -88,4 +88,4 @@ def delete(productID):
     return redirect(url_for('listProducts', page=1)) 
 
 if __name__ == '__main__':
-    app.run(debug=True) 
+    app.run(port=5000, debug=True, host='0.0.0.0') 
